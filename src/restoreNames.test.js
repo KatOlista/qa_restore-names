@@ -34,14 +34,18 @@ describe('restoreNames', () => {
   });
 
   it(`should add 'firstName' if it is undefined`, () => {
-    restoreNames(users);
+    const currentUsers = [...users];
 
-    expect(users).toEqual(expectedResult);
+    restoreNames(currentUsers);
+
+    expect(currentUsers).toEqual(expectedResult);
   });
 
   it(`should not add 'firstName' if it is defined`, () => {
-    restoreNames(users);
+    const currentUsers = [...users];
 
-    expect(users).toEqual(expectedResult);
+    restoreNames(currentUsers);
+
+    expect(currentUsers).toEqual(expectedResult);
   });
 });
